@@ -23,13 +23,13 @@ def calc_non_costs(net_amount, vat_amount, deduction_factor):
 def display_results(costs, vat_amount, non_costs):
     print("KUP: {0}\n50% VAT: {1}\nNKUP: {2}".format(round(costs, 2), round(vat_amount, 2), round(non_costs, 2)))
 
-def init_calc():
+def init_calc(vat_rate, deduction_factor):
     user_input = input("Czy chcesz obliczyć NKUP od wydatku? (t/n) : ")
 
     while user_input.lower() != 'n':
         net_amount = get_net_amount()
-        half_of_vat = get_half_of_vat(get_vat_amount(net_amount, VAT_RATE))
-        non_costs = calc_non_costs(net_amount, half_of_vat, NON_COSTS_PROPORTION)
+        half_of_vat = get_half_of_vat(get_vat_amount(net_amount, vat_rate))
+        non_costs = calc_non_costs(net_amount, half_of_vat, deduction_factor)
         costs = (net_amount + half_of_vat) - non_costs
         display_results(costs, half_of_vat, non_costs)
 
@@ -40,4 +40,4 @@ def init_calc():
             else:
                 print("Nie ma takiej opcji.")
 
-init_calc()
+init_calc(VAT_RATE, NON_COSTS_PROPORTION)
