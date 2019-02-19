@@ -1,8 +1,8 @@
 VAT_RATE = 0.23
 NON_COSTS_PROPORTION = 0.25
 
-def get_vat(net_amount):
-    return net_amount * VAT_RATE
+def get_vat_amount(net_amount, vat_rate):
+    return net_amount * vat_rate
 
 def get_half_of_vat(vat_amount):
     return vat_amount / 2
@@ -15,3 +15,9 @@ def get_net_amount():
             print("Nieprawidłowe dane!")
         else:
             return net_amount
+
+def calc_non_costs(net_amount, vat_amount, deduction_factor):
+    non_costs = (net_amount + vat_amount) * deduction_factor
+    return non_costs
+
+    
