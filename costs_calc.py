@@ -41,4 +41,3 @@ def init_calc():
                 print("Nie ma takiej opcji.")
 
 init_calc()
-        
