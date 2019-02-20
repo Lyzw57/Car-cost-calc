@@ -21,7 +21,7 @@ def calc_non_costs(net_amount, vat_amount, deduction_factor):
     return non_costs
 
 def display_results(costs, vat_amount, non_costs):
-    print("KUP: {0}\n50% VAT: {1}\nNKUP: {2}".format(costs, 2, vat_amount, 2, non_costs, 2))
+    print("KUP: {0}\n50% VAT: {1}\nNKUP: {2}".format(costs, vat_amount, non_costs))
 
 def init_calc(vat_rate, deduction_factor):
     user_input = input("Czy chcesz obliczyć NKUP od wydatku? (t/n) : ")
