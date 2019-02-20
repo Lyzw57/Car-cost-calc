@@ -2,10 +2,10 @@ VAT_RATE = 0.23
 NON_COSTS_PROPORTION = 0.25
 
 def get_vat_amount(net_amount, vat_rate):
-    return net_amount * vat_rate
+    return round((net_amount * vat_rate), 2)
 
 def get_half_of_vat(vat_amount):
-    return vat_amount / 2
+    return round((vat_amount / 2), 2)
 
 def get_net_amount():
     while True:
@@ -14,11 +14,11 @@ def get_net_amount():
         except ValueError:
             print("Nieprawidłowe dane!")
         else:
-            return net_amount
+            return round(net_amount, 2)
 
 def calc_non_costs(net_amount, vat_amount, deduction_factor):
     non_costs = (net_amount + vat_amount) * deduction_factor
-    return non_costs
+    return round(non_costs, 2)
 
 def display_results(costs, vat_amount, non_costs):
     print("KUP: {0}\n50% VAT: {1}\nNKUP: {2}".format(costs, vat_amount, non_costs))
