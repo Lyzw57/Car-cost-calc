@@ -14,9 +14,11 @@ Calculating non-deductable part of car expense.
 To use car costs calulator just download the .py file and run it via terminal.
 
 Windows:
+
 ```>python costs_calc.py```
 
 Unix:
+
 ```$python3 costs_calc.py```
 
 ### Manual
