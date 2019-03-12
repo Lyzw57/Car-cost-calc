@@ -40,4 +40,6 @@ def init_calc(vat_rate, deduction_factor):
             else:
                 print("Nie ma takiej opcji.")
 
-init_calc(VAT_RATE, NON_COSTS_PROPORTION)
+
+if __name__ == "__main__":
+    init_calc(VAT_RATE, NON_COSTS_PROPORTION)
